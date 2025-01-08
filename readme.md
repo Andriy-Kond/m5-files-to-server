@@ -1,11 +1,11 @@
 # Packages
 
-- `express from "express"` - create server package
-- `logger from "morgan"` - HTTP request logger middleware for node.js
-- `cors from "cors"` - Enable CORS: allows cross-requests from different addresses.
-- `import Joi from "joi"` - Checking request body: schema description language and data validator
-
-- add `try-catch decorator`
+- `express` - create server package
+- `logger` - HTTP request logger middleware for node.js
+- `cors` - Enable CORS: allows cross-requests from different addresses.
+- `Joi` - Checking request body: schema description language and data validator
+- `multer` - Allows upload files
+- [`gravatar`](https://www.npmjs.com/package/gravatar) - Generate avatars
 
 #### For render to render.com needs add to package.json:
 

@@ -58,6 +58,11 @@ const mongooseUserSchema = new Schema(
       type: String,
       default: "",
     },
+    avatarURL: {
+      type: String,
+      required: true,
+      default: "",
+    },
   },
   { versionKey: false, timestamps: true },
 );

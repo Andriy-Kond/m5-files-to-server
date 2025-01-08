@@ -20,10 +20,15 @@ const formatsLogger = app.get("env") === "development" ? "dev" : "short"; // rea
 // .use((err, req, res, next) => {...}): add middleware for errors processing
 
 app.use(logger(formatsLogger)); // show full or short info in log
+
 app.use(cors());
+
 app.use(express.json()); // Checks if exist body in each request. If exist, it checks type by header "Content-Type". If Content-Type === "application/json, this middleware convert it from string to object (by JSON.parse())
 
+app.use(express.static("public")); // Allows GET requests to files from the "public" folder
+
 app.use("/api/contacts", contactsRouter); // use contactsRouter methods if request on "/api/contacts" route
+
 app.use("/api/auth", authRouter);
 
 app.use("/", (req, res, next) => {

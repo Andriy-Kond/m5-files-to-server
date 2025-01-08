@@ -3,6 +3,7 @@ import { checkErrorJoiSchemaDecorator } from "../../middlewares/checkErrorJoiSch
 import { joiUserSchemas } from "../../models/userModel.js";
 import { authController } from "../../controllers/authController.js";
 import { authenticate } from "../../middlewares/authenticate.js";
+import { upload } from "../../middlewares/upload.js";
 
 export const authRouter = express.Router();
 
@@ -33,5 +34,13 @@ authRouter.get(
 authRouter.post(
   "/logout",
   authenticate, // checks if user is logged in
-  authController.logout, // check whether token is still valid
+  authController.logout,
+);
+
+// Change avatar
+authRouter.patch(
+  "/avatars",
+  authenticate, // checks if user is logged in
+  upload.single("avatarFile"),
+  authController.changeAvatar,
 );
