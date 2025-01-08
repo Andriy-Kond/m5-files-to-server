@@ -111,8 +111,21 @@ const changeAvatar = async (req, res) => {
   const uploadAvatarsDir = path.join(__dirname, "../", "public", "avatars");
 
   const { _id } = req.user;
-  const { path: tempDirWithFileName, originalname } = req.file;
-  const uniqFileName = `${_id}_${originalname}`;
+
+  console.log("changeAvatar >> req.file:::", req.file);
+  // changeAvatar >> req.file::: {
+  //   fieldname: 'avatarFile',
+  //!  originalname: 'The Hammer and the Cross.jpg',
+  //   encoding: '7bit',
+  //   mimetype: 'image/jpeg',
+  //   destination: 'D:\\Programming\\Node.js\\2024\\node-js-2024-hw\\m5-files-to-server\\temp',
+  //!  filename: 'The_Hammer_and_the_Cross.jpg',
+  //   path: 'D:\\Programming\\Node.js\\2024\\node-js-2024-hw\\m5-files-to-server\\temp\\The_Hammer_and_the_Cross.jpg',
+  //   size: 41717
+  // }
+
+  const { path: tempDirWithFileName, filename } = req.file;
+  const uniqFileName = `${_id}_${filename}`;
   const uploadDirWithFileName = path.join(uploadAvatarsDir, uniqFileName);
   await fs.rename(tempDirWithFileName, uploadDirWithFileName, errCb);
 
