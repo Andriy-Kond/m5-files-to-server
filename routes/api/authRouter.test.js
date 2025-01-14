@@ -14,13 +14,6 @@ import request from "supertest";
 import { app } from "../../app.js";
 import { User } from "../../models/userModel.js";
 
-// const app = require("../../app.js");
-// require("dotenv/config");
-// const mongoose = require("mongoose");
-// const request = require("supertest");
-
-// const { User } = require("../../models/userModel.js");
-
 const { DB_HOST_TEST, PORT: port = 3000 } = process.env;
 
 describe("auth routes register", () => {
@@ -75,4 +68,6 @@ describe("auth routes register", () => {
     expect(user.name).toBe(registerData.name);
     expect(user.email).toBe(registerData.email);
   });
+
+  // some other tests if it needs...
 });
