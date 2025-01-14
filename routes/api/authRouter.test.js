@@ -71,3 +71,5 @@ describe("auth routes register", () => {
 
   // some other tests if it needs...
 });
+
+// In this file you can make several des cribe() for each router (/login, /current, etc.)
