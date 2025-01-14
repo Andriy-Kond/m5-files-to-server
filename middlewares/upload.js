@@ -3,8 +3,16 @@
 import multer from "multer";
 import path from "path";
 
+// For JEST the __dirname must be declared as in for Node.js 10.12:
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+// Otherwise in __dirname will ber undefined.
+
 // First of all you need put files into temp folder. Where this file will then be moved will be decided in the authController
-const __dirname = import.meta.dirname; // here it is path to "middlewares" folder
+
+// For Node.js 20.11/21.2:
+// const __dirname = import.meta.dirname; // here it is path to "middlewares" folder
 const tempDir = path.join(__dirname, "../", "temp");
 
 // Settings object for middleware multer:

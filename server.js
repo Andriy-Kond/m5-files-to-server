@@ -5,17 +5,18 @@ import mongoose from "mongoose";
 import "dotenv/config"; // Method .config() looks for file .env, reads it and add to process.env keys with values.
 
 // const port = process.env.PORT || 3000;
-const { DB_HOST, PORT: port = 3000 } = process.env;
+const { DB_HOST_TEST, PORT: port = 3000 } = process.env;
 
 // console.log("process.env.DB_HOST:::", process.env.DB_HOST);
 // console.log("process.env.PORT:::", process.env.PORT);
 // console.log("process.env:::>", process.env);
 
 mongoose
-  .connect(DB_HOST)
+  .connect(DB_HOST_TEST)
   .then(() => {
     console.log("DB connecting successful");
-    app.listen(port, () => console.log(`Server running on port :>> ${port}`));
+
+    app.listen(port, () => console.log(`Server running on port :>> ${port}`)); // start web-server
   })
   .catch(err => {
     console.log(err.message);

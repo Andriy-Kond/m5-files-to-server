@@ -1,4 +1,4 @@
-# Packages
+## Packages
 
 - `express` - create server package
 - `logger` - HTTP request logger middleware for node.js
@@ -7,7 +7,17 @@
 - `multer` - Allows upload files together with fields
 - [`gravatar`](https://www.npmjs.com/package/gravatar) - Generate avatars
 
-#### For render to render.com needs add to package.json:
+## Tests
+
+- [`jest`](https://jestjs.io/) - program test for js
+
+for ES5 project enough: `npm i --save-dev jest`
+
+for ES6 must be add: `npm i --save-dev @jest/globals`
+
+- [`supertest`](https://www.npmjs.com/package/supertest) - Imitates HTTP-request (npm install supertest --save-dev)
+
+## For render to render.com needs add to package.json:
 
 ```js
   "engines": {

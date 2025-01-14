@@ -8,7 +8,7 @@ import { authRouter } from "./routes/api/authRouter.js";
 // // require("dotenv").config();
 // import "dotenv/config"; // Method .config() looks for file .env, reads it and add to process.env keys with values.
 
-export const app = express();
+export const app = express(); // The app exports web-server.
 
 // In package.json, depends of value (development or production) in variable ENV (aka NODE_ENV) will be showed full or short info
 // cross-env NODE_ENV=production nodemon server.js - will show full info
